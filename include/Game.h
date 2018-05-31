@@ -1,19 +1,21 @@
 #include "Character.h"
-#include <ctime>
 #include "Functions.h"
+#include <ctime>
 #include <vector>
+#include <fstream>
 
 class Game
 {
-  private:
+private:
 	int choise;
 	bool playing;
 
 	// character
 	std::vector<Character> characters;
 	int activeCharacter;
+	std::string fileName;
 
-  public:
+public:
 	Game();
 	virtual ~Game();
 
@@ -22,6 +24,9 @@ class Game
 	// Functions
 	void initGame();
 	void mainMenu();
+	void createNewCharacter();
+	void saveCharacters();
+	void loadCharacters();
 
 	// Accessors
 	inline bool getPlaying() const { return this->playing; };

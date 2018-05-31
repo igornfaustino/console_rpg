@@ -35,7 +35,7 @@ Character::~Character()
 void Character::initialize(const std::string name)
 {
 	this->name = name;
-	this->level = 2;
+	this->level = 1;
 	this->exp = 0;
 	this->expNext = static_cast<int>(50 + (50 / 3) * (pow(this->level, 3) - 6 * pow(this->level, 2) + (17 * this->level) - 12));
 
