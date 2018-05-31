@@ -1,30 +1,30 @@
 #include "Character.h"
 #include <ctime>
 #include "Functions.h"
-
-using namespace std;
+#include <vector>
 
 class Game
 {
-private:
-    int choise;
-    bool playing;
+  private:
+	int choise;
+	bool playing;
 
-    // character
-    Character character;
+	// character
+	std::vector<Character> characters;
+	int activeCharacter;
 
-public:
-    Game();
-    virtual ~Game();
+  public:
+	Game();
+	virtual ~Game();
 
-    // Operators
+	// Operators
 
-    // Functions
-    void initGame();
-    void mainMenu();
+	// Functions
+	void initGame();
+	void mainMenu();
 
-    // Accessors
-    inline bool getPlaying() const { return this->playing; };
+	// Accessors
+	inline bool getPlaying() const { return this->playing; };
 
-    // Modifiers
+	// Modifiers
 };

@@ -2,8 +2,9 @@
 
 Game::Game()
 {
-    choise = 0;
-    playing = true;
+	this->choise = 0;
+	this->playing = true;
+	this->activeCharacter = 0;
 }
 
 Game::~Game()
@@ -13,38 +14,47 @@ Game::~Game()
 // Functions
 void Game::initGame()
 {
-    string name;
-    cout << "Enter name for character: ";
-    getline(cin, name);
-    this->character.initialize(name);
+	std::string name;
+	std::cout << "Enter name for character: ";
+	getline(std::cin, name);
+	this->character.initialize(name);
 }
 
 void Game::mainMenu()
 {
-    cout << "MAIN MENU" << endl
-         << endl;
+	std::cout << "MAIN MENU" << std::endl
+			  << std::endl;
 
-    cout << "0: Quit" << endl;
-    cout << "1: Travel" << endl;
-    cout << "2: Shop" << endl;
-    cout << "3: Level Up" << endl;
-    cout << "4: Rest" << endl;
-    cout << "5: Character Sheet" << endl;
+	std::cout << "0: Quit" << std::endl;
+	std::cout << "1: Travel" << std::endl;
+	std::cout << "2: Shop" << std::endl;
+	std::cout << "3: Level Up" << std::endl;
+	std::cout << "4: Rest" << std::endl;
+	std::cout << "5: Character Sheet" << std::endl;
+	std::cout << "6: Create a New Character" << std::endl;
+	std::cout << "7: save Character" << std::endl;
+	std::cout << "8: load Character" << std::endl;
 
-    cout << endl
-         << "Choise: ";
+	std::cout << std::endl
+			  << "Choise: ";
 
-    cin >> choise;
+	std::cin >> this->choise;
 
-    switch (choise)
-    {
-    case 0:
-        playing = false;
-        break;
-    case 5:
-        character.printToScreen();
-        break;
-    default:
-        break;
-    }
+	switch (this->choise)
+	{
+	case 0:
+		this->playing = false;
+		break;
+	case 5:
+		this->characters[this->activeCharacter].printToScreen();
+		break;
+	case 6:
+		break;
+	case 7:
+		break;
+	case 8:
+		break;
+	default:
+		break;
+	}
 }
