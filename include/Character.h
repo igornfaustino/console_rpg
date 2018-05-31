@@ -1,4 +1,7 @@
 #include <string>
+#include <math.h>
+#include <iostream>
+#include <iomanip>
 
 using namespace std;
 
@@ -12,19 +15,32 @@ class Character
     int level;
     int exp;
     int expNext;
+
+    int strenght;
+    int vitality;
+    int dexterity;
+    int intelligence;
+
     int hp;
     int hpMax;
     int stamina;
+    int staminaMax;
     int damageMin;
     int damageMax;
     int defence;
+    int luck;
+
+    int skillPoints;
+    int statPoints;
 
   public:
     Character();
     virtual ~Character();
 
     // Functions
-    void initialize(int level, string name);
+    void initialize(const string name);
+    void printToScreen() const;
+    void levelUp();
 
     // Accessors
     inline const double &getX() const { return this->xPos; }

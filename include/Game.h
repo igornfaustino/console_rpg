@@ -1,6 +1,4 @@
 #include "Character.h"
-#include <iostream>
-#include <iomanip>
 #include <ctime>
 #include "Functions.h"
 
@@ -12,6 +10,9 @@ private:
     int choise;
     bool playing;
 
+    // character
+    Character character;
+
 public:
     Game();
     virtual ~Game();
@@ -19,6 +20,7 @@ public:
     // Operators
 
     // Functions
+    void initGame();
     void mainMenu();
 
     // Accessors
