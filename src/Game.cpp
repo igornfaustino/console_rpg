@@ -127,3 +127,7 @@ void Game::saveCharacters()
 void Game::loadCharacters()
 {
 }
+
+void Game::travel()
+{
+}

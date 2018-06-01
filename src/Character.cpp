@@ -22,6 +22,7 @@ Character::Character()
 	this->damageMin = 0;
 	this->damageMax = 0;
 	this->defence = 0;
+	this->accuracy = 0;
 	this->luck = 0;
 
 	this->skillPoints = 0;
@@ -49,8 +50,9 @@ void Character::initialize(const std::string name)
 	this->staminaMax = (this->vitality + (this->strenght / 2) + (this->dexterity / 3));
 	this->stamina = this->staminaMax;
 	this->damageMin = this->strenght;
-	this->damageMax = this->strenght+2;
-	this->defence = this->dexterity + (this->intelligence/2);
+	this->damageMax = this->strenght + 2;
+	this->defence = this->dexterity + (this->intelligence / 2);
+	this->accuracy = (this->dexterity / 2);
 	this->luck = this->intelligence;
 }
 
@@ -72,6 +74,7 @@ void Character::printToScreen() const
 	std::cout << "- Stamina: " << this->stamina << "/" << this->staminaMax << std::endl;
 	std::cout << "- Damage: " << this->damageMin << "-" << damageMax << std::endl;
 	std::cout << "- Defence: " << this->defence << std::endl;
+	std::cout << "- Accuracy: " << this->accuracy << std::endl;
 	std::cout << "- Luck: " << this->luck << std::endl;
 	std::cout << std::endl;
 }

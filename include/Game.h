@@ -2,6 +2,7 @@
 #define GAME_H
 
 #include "Character.h"
+#include "Enemy.h"
 #include <ctime>
 #include <vector>
 #include <fstream>
@@ -29,6 +30,7 @@ public:
 	void createNewCharacter();
 	void saveCharacters();
 	void loadCharacters();
+	void travel();
 
 	// Accessors
 	inline bool getPlaying() const { return this->playing; };

@@ -2,10 +2,28 @@
 
 Inventory::Inventory()
 {
-	this->cap = 10;
+	this->cap = 5;
 	this->nrOfItems = 0;
 	this->itemArr = new Item *[cap];
+	this->initialize();
 }
+
+Inventory::Inventory(const Inventory &obj)
+{
+	this->cap = obj.cap;
+	this->nrOfItems = obj.nrOfItems;
+	this->itemArr = new Item *[cap];
+
+	
+	for(size_t i = 0; i < this->nrOfItems; i++)
+	{
+		this->itemArr[i] = obj.itemArr[i]->clone();
+	}
+	
+
+	this->initialize();
+}
+
 
 Inventory::~Inventory()
 {
@@ -61,4 +79,11 @@ void Inventory::removeItem(unsigned int index)
 	delete this->itemArr[index];
 	this->itemArr[index] = this->itemArr[this->nrOfItems - 1];
 	this->itemArr[--this->nrOfItems] = nullptr;
+}
+
+Item &Inventory::operator[](const int index){
+	if(index < 0 || (unsigned int)index > this->nrOfItems)
+		throw("BAD INDEX");
+	
+	return *this->itemArr[index];
 }

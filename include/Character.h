@@ -11,7 +11,10 @@ class Character
 
 	Inventory inventory;
 	Weapon weapon;
-	Armor armor;
+	Armor armor_head;
+	Armor armor_chest;
+	Armor armor_legs;
+	Armor armor_arms;
 
 	std::string name;
 	int level;
@@ -30,6 +33,7 @@ class Character
 	int damageMin;
 	int damageMax;
 	int defence;
+	int accuracy;
 	int luck;
 
 	int skillPoints;
@@ -58,6 +62,7 @@ class Character
 	inline const int &getDamageMin() const { return this->damageMin; }
 	inline const int &getDamageMax() const { return this->damageMax; }
 	inline const int &getDefence() const { return this->defence; }
+	inline const int &getAccuracy() const { return this->accuracy; }
 
 	// Modifiers
 };
