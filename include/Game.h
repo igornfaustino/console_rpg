@@ -1,5 +1,7 @@
+#ifndef GAME_H
+#define GAME_H
+
 #include "Character.h"
-#include "Functions.h"
 #include <ctime>
 #include <vector>
 #include <fstream>
@@ -33,3 +35,5 @@ public:
 
 	// Modifiers
 };
+
+#endif // !GAME_H

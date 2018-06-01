@@ -25,12 +25,7 @@ void Inventory::expand()
 
 	for (size_t i = 0; i < this->nrOfItems; i++)
 	{
-		tempArr[i] = new Item(*this->itemArr[i]);
-	}
-
-	for (size_t i = 0; i < this->nrOfItems; i++)
-	{
-		delete this->itemArr[i];
+		tempArr[i] = this->itemArr[i];
 	}
 
 	delete[] this->itemArr;
@@ -54,9 +49,16 @@ void Inventory::addItem(const Item &item)
 		expand();
 	}
 
-	this->itemArr[this->nrOfItems++] = new Item(item);
+	this->itemArr[this->nrOfItems++] = item.clone();
 }
 
-void Inventory::removeItem(int index)
+void Inventory::removeItem(unsigned int index)
 {
+	if(index >= this->nrOfItems){
+		throw("Index out of range");
+	}
+
+	delete this->itemArr[index];
+	this->itemArr[index] = this->itemArr[this->nrOfItems - 1];
+	this->itemArr[--this->nrOfItems] = nullptr;
 }

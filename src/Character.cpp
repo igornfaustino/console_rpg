@@ -15,8 +15,8 @@ Character::Character()
 	this->dexterity = 0;
 	this->intelligence = 0;
 
-	this->hp = 0;
 	this->hpMax = 0;
+	this->hp = 0;
 	this->stamina = 0;
 	this->staminaMax = 0;
 	this->damageMin = 0;
@@ -44,14 +44,14 @@ void Character::initialize(const std::string name)
 	this->dexterity = 5;
 	this->intelligence = 5;
 
-	this->hp = 10;
-	this->hpMax = 10;
-	this->stamina = 10;
-	this->staminaMax = 10;
-	this->damageMin = 2;
-	this->damageMax = 4;
-	this->defence = 4;
-	this->luck = 1;
+	this->hpMax = (this->vitality * 2) + (this->strenght / 2);
+	this->hp = this->hpMax;
+	this->staminaMax = (this->vitality + (this->strenght / 2) + (this->dexterity / 3));
+	this->stamina = this->staminaMax;
+	this->damageMin = this->strenght;
+	this->damageMax = this->strenght+2;
+	this->defence = this->dexterity + (this->intelligence/2);
+	this->luck = this->intelligence;
 }
 
 void Character::printToScreen() const

@@ -1,3 +1,6 @@
+#ifndef CHARACTER_H
+#define CHARACTER_H
+
 #include "Inventory.h"
 
 class Character
@@ -5,6 +8,10 @@ class Character
   private:
 	double xPos;
 	double yPos;
+
+	Inventory inventory;
+	Weapon weapon;
+	Armor armor;
 
 	std::string name;
 	int level;
@@ -54,3 +61,5 @@ class Character
 
 	// Modifiers
 };
+
+#endif // !CHARACTER_H

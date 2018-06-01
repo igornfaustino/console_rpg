@@ -1,4 +1,8 @@
-#include "Item.h"
+#ifndef INVENTORY_H
+#define INVENTORY_H
+
+#include "Weapon.h"
+#include "Armor.h"
 
 class Inventory
 {
@@ -11,10 +15,10 @@ class Inventory
 
   public:
 	Inventory();
-	~Inventory();
+	virtual ~Inventory();
 
 	void addItem(const Item &item);
-	void removeItem(int index);
+	void removeItem(unsigned int index);
 
 	inline void debugPrint() const {
 		
@@ -25,3 +29,5 @@ class Inventory
 		
 	}
 };
+
+#endif // !INVENTORY_H
